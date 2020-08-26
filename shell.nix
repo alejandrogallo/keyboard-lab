@@ -12,8 +12,6 @@ let
     hlint
     ];
 in
-stdenv.mkDerivation rec {
-  name = "split-atreus";
-  nativeBuildInputs = nixPackages;
-  system = builtins.currentSystem;
+mkShell rec {
+  buildInputs = nixPackages;
 }

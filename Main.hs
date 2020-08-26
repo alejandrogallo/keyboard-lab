@@ -2,9 +2,9 @@ import Diagrams.Prelude
 import Diagrams.Backend.SVG.CmdLine
 
 import Alps
-import Promicro
 import Atreus
 import Keyboard
+import Promicro
 
 cmToPx = 37.79527559055118
 
