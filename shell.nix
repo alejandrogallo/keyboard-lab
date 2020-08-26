@@ -9,11 +9,10 @@ let
   nixPackages = [
     ghc
     binutils
-    emacs
     ];
 in
 stdenv.mkDerivation rec {
-  name = "gallo-xmonad";
+  name = "split-atreus";
   nativeBuildInputs = nixPackages;
   system = builtins.currentSystem;
 }
