@@ -26,7 +26,7 @@ jobs:
       uses: cachix/install-nix-action@v10
 
     - name: Build figures
-      run: make nix
+      run: nix-shell --run make
 
     - name: Linting
       run: hlint *.hs
