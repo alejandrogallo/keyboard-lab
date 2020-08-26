@@ -9,6 +9,6 @@ promicro = mconcat $ [ rect w h ] ++ pinsL ++ pinsR ++ [label]
         pt = circle (r/2) # lc green
         w = 1.8
         h = 3.3
-        label = text "promicro" # (rotate $ 90 @@ deg) # scale 0.5
+        label = text "promicro" # rotate $ 90 @@ deg # scale 0.5
         pinsR = [ place pt $ p2 (w/2 - r, y * 0.25 - h / 2 + r) | y <- [0..11]]
         pinsL = [ place pt $ p2 (r - w/2, y * 0.25 - h / 2 + r) | y <- [0..11]]

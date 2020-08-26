@@ -9,6 +9,7 @@ let
   nixPackages = [
     ghc
     binutils
+    hlint
     ];
 in
 stdenv.mkDerivation rec {
