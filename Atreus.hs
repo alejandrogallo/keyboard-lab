@@ -35,7 +35,7 @@ atreus = [ Key 0.0 (0.0 * sepY) "כ"
          ]
 
     where sepY = 1.95
-          sepX1 = 1.9
+          sepX1 = 2
           sepX2 = 2 * sepX1
           sepX3 = 3 * sepX1
           sepX4 = 4 * sepX1
