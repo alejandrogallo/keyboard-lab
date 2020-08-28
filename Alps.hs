@@ -10,9 +10,11 @@ tecFootprint = mconcat [ rect alpsX alpsY
                        , place pt $ p2 (holeX - 2*sepHole, holeY)
                        ]
   where pt = circle 0.08 # fc red # lc red
-        sepHole = (alpsX - 0.4) / 2.0
-        holeY = alpsY/2 - 0.2
-        holeX = alpsX/2 - 0.2
+        sepHole = (alpsX - xSep * 2) / 2.0
+        xSep = 0.3
+        ySep = 0.25
+        holeY = alpsY/2 - ySep
+        holeX = alpsX/2 - xSep
 
 alpsFootprint :: Diagram B
 alpsFootprint = rect alpsX alpsY
@@ -20,4 +22,4 @@ alpsFootprint = rect alpsX alpsY
 -- alpsX = 1.645
 alpsX = 1.5945
 -- alpsY = 1.33
-alpsY = 1.396
+alpsY = 1.3
