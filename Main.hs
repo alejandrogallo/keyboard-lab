@@ -13,7 +13,8 @@ bothHalfs = splitHalf ||| strutX 1 ||| splitHalf # reflectX
 
 myMain :: String -> Diagram B
 myMain s | s == "both" = bothHalfs # scale cmToPx
-         | otherwise = splitHalf # scale cmToPx
+         | s == "left" = splitHalf # scale cmToPx
+         | otherwise = splitHalf # reflectX # scale cmToPx
 
 
 main = mainWith myMain

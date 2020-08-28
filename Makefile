@@ -1,12 +1,18 @@
-all: Main single.svg both.svg
+all: svg
+svg: left.svg both.svg right.svg
 
 include deps.mk
+
+Main: $(wildcard *.hs)
 
 both.svg: Main
 	./$< both -o $@
 
-single.svg: Main
-	./$< single -o $@
+left.svg: Main
+	./$< left -o $@
+
+right.svg: Main
+	./$< right -o $@
 
 %: %.o
 	ghc --make $@
@@ -25,4 +31,4 @@ Main: deps.mk
 deps.mk: Main.hs
 	ghc -M $? -dep-makefile $@ -dep-suffix ''
 
-.PHONY: nix clean all dep
+.PHONY: nix clean all dep svg
