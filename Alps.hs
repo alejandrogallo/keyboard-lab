@@ -19,7 +19,7 @@ tecFootprint = mconcat [ rect alpsX alpsY
 alpsFootprint :: Diagram B
 alpsFootprint = rect alpsX alpsY
 
--- alpsX = 1.645
+alpsX :: Double
 alpsX = 1.5945
--- alpsY = 1.33
+alpsY :: Double
 alpsY = 1.3
