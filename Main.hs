@@ -8,7 +8,7 @@ import Promicro
 
 cmToPx = 37.79527559055118
 
-splitHalf = drawKeyboard atreus <>  promicro # translate (9.8 ^& 5.6)
+splitHalf = drawKeyboard alpsFootprint atreus <>  promicro # translate (9.8 ^& 5.6)
 bothHalfs = splitHalf ||| strutX 1 ||| splitHalf # reflectX
 
 myMain :: String -> Diagram B

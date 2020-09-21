@@ -1,23 +1,37 @@
 module Alps where
 
 import Diagrams.Prelude
-import Diagrams.Backend.SVG.CmdLine
+import Keyboard (Footprint)
 
-tecFootprint :: Diagram B
-tecFootprint = mconcat [ rect alpsX alpsY
-                       , place pt $ p2 (holeX, holeY)
-                       , place pt $ p2 (holeX - sepHole, holeY)
-                       , place pt $ p2 (holeX - 2*sepHole, holeY)
+tecFootprint :: Footprint
+tecFootprint = mconcat [ alpsBodyFootprint
+                       , place leg $ p2 (holeX, holeY)
+                       , place leg $ p2 (holeX - sepHole, holeY)
+                       , place leg $ p2 (holeX - 2*sepHole, holeY)
                        ]
-  where pt = circle 0.08 # fc red # lc red
-        sepHole = (alpsX - xSep * 2) / 2.0
+  where sepHole = (alpsX - xSep * 2) / 2.0
         xSep = 0.3
         ySep = 0.25
         holeY = alpsY/2 - ySep
         holeX = alpsX/2 - xSep
 
-alpsFootprint :: Diagram B
-alpsFootprint = rect alpsX alpsY
+alpsBodyFootprint :: Footprint
+alpsBodyFootprint = rect alpsX alpsY
+
+leg :: Footprint
+leg = circle 0.08 # fc red # lc red
+
+alpsFootprint :: Footprint
+alpsFootprint =
+  mconcat [ alpsBodyFootprint
+          , place leg $ p2 (holeX                , holeY)
+          , place leg $ p2 (holeX - pinSeparation, holeY)
+          ]
+  where pinSeparation = 0.5
+        xSep = (alpsX - pinSeparation) / 2
+        ySep = 0.25
+        holeY = alpsY/2 - ySep
+        holeX = alpsX/2 - xSep
 
 alpsX :: Double
 alpsX = 1.5945

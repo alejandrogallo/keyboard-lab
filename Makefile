@@ -31,4 +31,7 @@ Main: deps.mk
 deps.mk: Main.hs
 	ghc -M $? -dep-makefile $@ -dep-suffix ''
 
-.PHONY: nix clean all dep svg
+lint:
+	hlint *.hs
+
+.PHONY: nix clean all dep svg lint
