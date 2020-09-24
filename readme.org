@@ -5,6 +5,12 @@ keyboards.
 
 If you want to build it, it's best if you use [[https://nixos.org][nix]].
 
+In that case, just do
+#+begin_src sh
+nix-shell --run make
+#+end_src
+
+
 An example of the output is:
 
 [[file:left.svg]]
