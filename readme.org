@@ -1,0 +1,10 @@
+# Split keyboard lab
+
+This repository contains code to generate my layouts for split
+keyboards.
+
+If you want to build it, it's best if you use [[https://nixos.org][nix]].
+
+An example of the output is:
+
+[[file:left.svg]]
