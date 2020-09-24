@@ -1,4 +1,4 @@
-# Split keyboard lab
+* Split keyboard lab
 
 This repository contains code to generate my layouts for split
 keyboards.
