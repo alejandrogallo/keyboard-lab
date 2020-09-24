@@ -11,6 +11,7 @@ tecFootprint = mconcat [ alpsBodyFootprint
                        ]
   where sepHole = (alpsX - xSep * 2) / 2.0
         xSep = 0.3
+        holeX = alpsX/2 - xSep
 
 
 alpsBodyFootprint :: Footprint
@@ -28,6 +29,7 @@ alpsFootprint =
           ]
   where pinSeparation = 0.5
         xSep = (alpsX - pinSeparation) / 2
+        holeX = alpsX/2 - xSep
 
 -- Some constants common to all
 alpsX :: Double
@@ -41,6 +43,3 @@ ySep = 0.25
 
 holeY :: Double
 holeY = alpsY/2 - ySep
-
-holeX :: Double
-holeX = alpsX/2 - xSep
