@@ -10,6 +10,14 @@ In that case, just do
 nix-shell --run make
 #+end_src
 
+The footprints of the keyboards are right now for switches
+I have and keyboards I'm building with them:
+
+| Switch     | Measures | link        |
+|------------+----------+-------------|
+| Tec        | myself   | [[https://deskthority.net/wiki/TEC_switch][deskthority]] |
+| Alps mount | myself   |             |
+| MX mount   | [[https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf][sparkfun]] |             |
 
 * Examples
 * Nammu-Tec-left.svg

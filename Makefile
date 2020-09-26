@@ -24,7 +24,7 @@ readme.org: $(KBS)
 	echo "* Examples" >> $@
 	for kb in $(KBS); do \
 		[[ $$kb == *right* ]] && continue; \
-		echo "* $$kb" >> $@; \
+		echo "** $$kb" >> $@; \
 		echo "[[file:$$kb]]" >> $@; \
 	done
 
