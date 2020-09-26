@@ -12,9 +12,11 @@ nix-shell --run make
 
 
 * Examples
-
-An example of the output is:
-
-[[file:left.svg]]
-
-#+INCLUDE: examples.org
+* Nammu-Tec-left.svg
+file:Nammu-Tec-left.svg
+* Utu-Tec-left.svg
+file:Utu-Tec-left.svg
+* Nammu-Alps-left.svg
+file:Nammu-Alps-left.svg
+* Utu-Alps-left.svg
+file:Utu-Alps-left.svg

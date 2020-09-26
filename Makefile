@@ -1,4 +1,4 @@
-all: svg
+all: svg readme.org
 
 KEYBOARDS = Nammu Utu
 SWITCHES = Tec Alps
@@ -19,6 +19,14 @@ $(foreach side,$(SIDES),\
 				$(foreach kb,$(KEYBOARDS),\
 					$(eval $(call kb-rule,$(kb),$(switch),$(side))))))
 
+readme.org: $(KBS)
+	sed -i '/\* Examples/,$$ { d }' $@
+	echo "* Examples" >> $@
+	for kb in $(KBS); do \
+		[[ $$kb == *right* ]] && continue; \
+		echo "* $$kb" >> $@; \
+		echo "file:$$kb" >> $@; \
+	done
 
 svg: $(KBS)
 
