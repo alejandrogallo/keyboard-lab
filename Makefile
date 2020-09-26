@@ -25,7 +25,7 @@ readme.org: $(KBS)
 	for kb in $(KBS); do \
 		[[ $$kb == *right* ]] && continue; \
 		echo "* $$kb" >> $@; \
-		echo "file:$$kb" >> $@; \
+		echo "[[file:$$kb]]" >> $@; \
 	done
 
 svg: $(KBS)
