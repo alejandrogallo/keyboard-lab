@@ -23,7 +23,7 @@ drawProject :: A.Options -> Diagram B
 drawProject o = d # scale cmToPx # op
   where kb = keyboardFromName . A.name $ o
         switch = switchFootprint . A.keyswitch $ o
-        d = drawKeyboard switch kb <> promicro # translate (9.8 ^& 5.6)
+        d = drawKeyboard switch kb
         op = if A.right o then reflectX else id
 
 main :: IO ()
