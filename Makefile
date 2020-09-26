@@ -1,18 +1,30 @@
 all: svg
-svg: left.svg both.svg right.svg
+
+KEYBOARDS = Nammu Utu
+SWITCHES = Tec Alps
+SIDES = left right
+
+KBS = $(foreach side,$(SIDES),\
+				$(foreach switch,$(SWITCHES),\
+					$(foreach kb,$(KEYBOARDS),\
+						$(kb)-$(switch)-$(side).svg)))
+
+define kb-rule
+$(1)-$(2)-$(3).svg: Main
+	./Main --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
+endef
+
+$(foreach side,$(SIDES),\
+		$(foreach switch,$(SWITCHES),\
+				$(foreach kb,$(KEYBOARDS),\
+					$(eval $(call kb-rule,$(kb),$(switch),$(side))))))
+
+
+svg: $(KBS)
 
 include deps.mk
 
 Main: $(wildcard *.hs)
-
-both.svg: Main
-	./$< both -o $@
-
-left.svg: Main
-	./$< left -o $@
-
-right.svg: Main
-	./$< right -o $@
 
 %: %.o
 	ghc --make $@
