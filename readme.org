@@ -11,6 +11,10 @@ nix-shell --run make
 #+end_src
 
 
+* Examples
+
 An example of the output is:
 
 [[file:left.svg]]
+
+#+INCLUDE: examples.org
