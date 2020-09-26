@@ -6,9 +6,9 @@ SWITCHES = Tec Alps Mx
 SIDES = left right
 
 KBS = $(foreach side,$(SIDES),\
-				$(foreach switch,$(SWITCHES),\
-					$(foreach kb,$(KEYBOARDS),\
-						$(BUILD_DIR)$(kb)-$(switch)-$(side).svg)))
+         $(foreach switch,$(SWITCHES),\
+            $(foreach kb,$(KEYBOARDS),\
+               $(BUILD_DIR)$(kb)-$(switch)-$(side).svg)))
 
 define kb-rule
 $(BUILD_DIR)$(1)-$(2)-$(3).svg: Main
@@ -16,9 +16,9 @@ $(BUILD_DIR)$(1)-$(2)-$(3).svg: Main
 endef
 
 $(foreach side,$(SIDES),\
-		$(foreach switch,$(SWITCHES),\
-				$(foreach kb,$(KEYBOARDS),\
-					$(eval $(call kb-rule,$(kb),$(switch),$(side))))))
+   $(foreach switch,$(SWITCHES),\
+      $(foreach kb,$(KEYBOARDS),\
+         $(eval $(call kb-rule,$(kb),$(switch),$(side))))))
 
 readme.org: $(KBS)
 	sed -i '/\* Examples/,$$ { d }' $@
