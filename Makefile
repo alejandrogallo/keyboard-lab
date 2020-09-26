@@ -1,7 +1,7 @@
 all: svg readme.org
 
 KEYBOARDS = Nammu Utu
-SWITCHES = Tec Alps
+SWITCHES = Tec Alps Mx
 SIDES = left right
 
 KBS = $(foreach side,$(SIDES),\

@@ -3,7 +3,7 @@ module Args where
 import Options.Applicative
 import Diagrams.Backend.CmdLine (Parseable, parser)
 
-data KeyswitchName = Tec | Alps
+data KeyswitchName = Tec | Alps | Mx
   deriving Read
 
 data KeyboardName = Nammu | Utu

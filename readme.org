@@ -20,3 +20,7 @@ nix-shell --run make
 [[file:Nammu-Alps-left.svg]]
 * Utu-Alps-left.svg
 [[file:Utu-Alps-left.svg]]
+* Nammu-Mx-left.svg
+[[file:Nammu-Mx-left.svg]]
+* Utu-Mx-left.svg
+[[file:Utu-Mx-left.svg]]
