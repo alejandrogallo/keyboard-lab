@@ -20,15 +20,15 @@ I have and keyboards I'm building with them:
 | MX mount   | [[https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf][sparkfun]] | [[https://deskthority.net/wiki/Cherry_MX][deskthority]] |
 
 * Examples
-* Nammu-Tec-left.svg
+** Nammu-Tec-left.svg
 [[file:Nammu-Tec-left.svg]]
-* Utu-Tec-left.svg
+** Utu-Tec-left.svg
 [[file:Utu-Tec-left.svg]]
-* Nammu-Alps-left.svg
+** Nammu-Alps-left.svg
 [[file:Nammu-Alps-left.svg]]
-* Utu-Alps-left.svg
+** Utu-Alps-left.svg
 [[file:Utu-Alps-left.svg]]
-* Nammu-Mx-left.svg
+** Nammu-Mx-left.svg
 [[file:Nammu-Mx-left.svg]]
-* Utu-Mx-left.svg
+** Utu-Mx-left.svg
 [[file:Utu-Mx-left.svg]]
