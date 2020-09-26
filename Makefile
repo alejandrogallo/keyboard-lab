@@ -1,5 +1,6 @@
 all: svg readme.org
 
+BUILD_DIR = build/
 KEYBOARDS = Nammu Utu
 SWITCHES = Tec Alps Mx
 SIDES = left right
@@ -7,10 +8,10 @@ SIDES = left right
 KBS = $(foreach side,$(SIDES),\
 				$(foreach switch,$(SWITCHES),\
 					$(foreach kb,$(KEYBOARDS),\
-						$(kb)-$(switch)-$(side).svg)))
+						$(BUILD_DIR)$(kb)-$(switch)-$(side).svg)))
 
 define kb-rule
-$(1)-$(2)-$(3).svg: Main
+$(BUILD_DIR)$(1)-$(2)-$(3).svg: Main
 	./Main --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
 endef
 
@@ -24,7 +25,7 @@ readme.org: $(KBS)
 	echo "* Examples" >> $@
 	for kb in $(KBS); do \
 		[[ $$kb == *right* ]] && continue; \
-		echo "** $$kb" >> $@; \
+		echo "** $$(sed 's/-/ /g; s/.svg//; s_$(BUILD_DIR)__' <<<$$kb)" >> $@; \
 		echo "[[file:$$kb]]" >> $@; \
 	done
 
@@ -41,7 +42,7 @@ Main: $(wildcard *.hs)
 	ghc $<
 
 clean:
-	rm *.svg *.o *.hi Main deps.mk
+	rm *.svg *.o *.hi Main deps.mk build/*
 
 nix:
 	nix-shell --run make
