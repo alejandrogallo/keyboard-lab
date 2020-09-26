@@ -5,33 +5,33 @@ import Keyboard
 
 parametrizedAtreus :: Double -> Keyboard
 parametrizedAtreus offY1
-  = [ Key 0.0 (0.0 * sepY) ""
-    , Key 0.0 (1.0 * sepY) ""
-    , Key 0.0 (2.0 * sepY) ""
-    , Key 0.0 (3.0 * sepY) ""
+  = [ Key 0     (0 * sepY)         0 ""
+    , Key 0     (1 * sepY)         0 ""
+    , Key 0     (2 * sepY)         0 ""
+    , Key 0     (3 * sepY)         0 ""
 
-    , Key sepX1 (0.0 * sepY + offY1) ""
-    , Key sepX1 (1.0 * sepY + offY1) ""
-    , Key sepX1 (2.0 * sepY + offY1) ""
-    , Key sepX1 (3.0 * sepY + offY1) ""
+    , Key sepX1 (0 * sepY + offY1) 0 ""
+    , Key sepX1 (1 * sepY + offY1) 0 ""
+    , Key sepX1 (2 * sepY + offY1) 0 ""
+    , Key sepX1 (3 * sepY + offY1) 0 ""
 
-    , Key sepX2 (0.0 * sepY + offY2) ""
-    , Key sepX2 (1.0 * sepY + offY2) ""
-    , Key sepX2 (2.0 * sepY + offY2) ""
-    , Key sepX2 (3.0 * sepY + offY2) ""
+    , Key sepX2 (0 * sepY + offY2) 0 ""
+    , Key sepX2 (1 * sepY + offY2) 0 ""
+    , Key sepX2 (2 * sepY + offY2) 0 ""
+    , Key sepX2 (3 * sepY + offY2) 0 ""
 
-    , Key sepX3 (0.0 * sepY + offY3) ""
-    , Key sepX3 (1.0 * sepY + offY3) ""
-    , Key sepX3 (2.0 * sepY + offY3) ""
-    , Key sepX3 (3.0 * sepY + offY3) ""
+    , Key sepX3 (0 * sepY + offY3) 0 ""
+    , Key sepX3 (1 * sepY + offY3) 0 ""
+    , Key sepX3 (2 * sepY + offY3) 0 ""
+    , Key sepX3 (3 * sepY + offY3) 0 ""
 
-    , Key sepX4 (0.0 * sepY + offY4) ""
-    , Key sepX4 (1.0 * sepY + offY4) ""
-    , Key sepX4 (2.0 * sepY + offY4) ""
-    , Key sepX4 (3.0 * sepY + offY4) ""
+    , Key sepX4 (0 * sepY + offY4) 0 ""
+    , Key sepX4 (1 * sepY + offY4) 0 ""
+    , Key sepX4 (2 * sepY + offY4) 0 ""
+    , Key sepX4 (3 * sepY + offY4) 0 ""
 
-    , Key sepX5 (0.0 * sepY + offY5) ""
-    , Key sepX5 (1.0 * sepY + offY5) ""
+    , Key sepX5 (0 * sepY + offY5) 0 ""
+    , Key sepX5 (1 * sepY + offY5) 0 ""
 
     ]
 
