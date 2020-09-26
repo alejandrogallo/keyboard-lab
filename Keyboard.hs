@@ -21,9 +21,9 @@ drawKeyboard f kb = mconcat $ drawKey <$> kb
     pos :: Key -> P2 Double
     pos k = p2 (keyX k, keyY k)
     rotatedKey :: Footprint -> Key -> Footprint
-    rotatedKey f k = (textFootprint f $ keyLabel k ) # rotate (angle k)
+    rotatedKey f k = textFootprint f (keyLabel k) # rotate (angle k)
     angle :: Key -> Angle Double
-    angle k = (keyAngle k) @@ deg
+    angle k = keyAngle k @@ deg
 
 textFootprint :: Footprint -> String -> Diagram B
 textFootprint f s = text s # scale 0.5 <> f
