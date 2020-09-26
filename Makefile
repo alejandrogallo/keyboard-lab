@@ -24,9 +24,9 @@ readme.org: $(KBS)
 	sed -i '/\* Examples/,$$ { d }' $@
 	echo "* Examples" >> $@
 	for kb in $(KBS); do \
-		[[ $$kb == *right* ]] && continue; \
-		echo "** $$(sed 's/-/ /g; s/.svg//; s_$(BUILD_DIR)__' <<<$$kb)" >> $@; \
-		echo "[[file:$$kb]]" >> $@; \
+	[[ $$kb == *right* ]] && continue; \
+	echo "** $$(echo $$kb | sed 's/-/ /g; s/.svg//; s_$(BUILD_DIR)__' )" >> $@; \
+	echo "[[file:$$kb]]" >> $@; \
 	done
 
 svg: $(KBS)
