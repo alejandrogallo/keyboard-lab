@@ -13,11 +13,11 @@ nix-shell --run make
 The footprints of the keyboards are right now for switches
 I have and keyboards I'm building with them:
 
-| Switch     | Measures | link        |
-|------------+----------+-------------|
-| Tec        | myself   | [[https://deskthority.net/wiki/TEC_switch][deskthority]] |
-| Alps mount | myself   | [[https://deskthority.net/wiki/Alps_SKBM_White][deskthority]] |
-| MX mount   | [[https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf][sparkfun]] | [[https://deskthority.net/wiki/Cherry_MX][deskthority]] |
+| Switch     | Measures | link        | Example                   |
+|------------+----------+-------------+---------------------------|
+| Tec        | myself   | [[https://deskthority.net/wiki/TEC_switch][deskthority]] | [[https://alejandrogallo.github.io/blog/split-atreus/index.html][recycled-pionier-keyboard]] |
+| Alps mount | myself   | [[https://deskthority.net/wiki/Alps_SKBM_White][deskthority]] |                           |
+| MX mount   | [[https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf][sparkfun]] | [[https://deskthority.net/wiki/Cherry_MX][deskthority]] |                           |
 
 * Examples
 ** Nammu Tec left
