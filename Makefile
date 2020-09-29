@@ -55,4 +55,23 @@ deps.mk: Main.hs
 lint:
 	hlint *.hs
 
+.deps/diagrams-lib/src:
+	mkdir -p $(@D)
+	git clone https://github.com/diagrams/diagrams-lib $(@D)
+
+.deps/linear/src:
+	mkdir -p $(@D)
+	git clone https://github.com/ekmett/linear $(@D)
+
+.deps/implicit/src:
+	mkdir -p $(@D)
+	git clone https://github.com/colah/ImplicitCAD $(@D)
+
+tags TAGS: .deps/diagrams-lib/src \
+           .deps/linear/src \
+           .deps/implicit/src \
+           $(wildcard *.hs)
+	ctags $?
+	ctags -e $?
+
 .PHONY: nix clean all dep svg lint
