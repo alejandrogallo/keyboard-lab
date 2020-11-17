@@ -25,5 +25,5 @@ drawKeyboard f kb = mconcat $ drawKey <$> kb
     angle :: Key -> Angle Double
     angle k = keyAngle k @@ deg
 
-textFootprint :: Footprint -> String -> Diagram B
+textFootprint :: Footprint -> String -> Footprint
 textFootprint f s = text s # scale 0.5 <> f

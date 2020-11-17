@@ -10,9 +10,11 @@ KBS = $(foreach side,$(SIDES),\
             $(foreach kb,$(KEYBOARDS),\
                $(BUILD_DIR)$(kb)-$(switch)-$(side).svg)))
 
+
 define kb-rule
 $(BUILD_DIR)$(1)-$(2)-$(3).svg: Main
-	./Main --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
+	$$(info [35m⇒[0m [36m$$@[0m)
+	./$$< --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
 endef
 
 $(foreach side,$(SIDES),\
@@ -74,4 +76,9 @@ tags TAGS: .deps/diagrams-lib/src \
 	ctags $?
 	ctags -e $?
 
-.PHONY: nix clean all dep svg lint
+.PHONY: nix clean all dep svg lint verbose
+
+verbose: VERBOSE=5
+ifndef VERBOSE
+.SILENT:
+endif

@@ -4,12 +4,16 @@ let
   haskellDeps = ps: [
     ps.diagrams
     ps.diagrams-pgf
+    ps.implicit
+    ps.haskell-language-server
+    ps.cabal-install
   ];
-  ghc = haskellPackages.ghcWithPackages haskellDeps;
+  ghc = unstable.haskellPackages.ghcWithPackages haskellDeps;
   nixPackages = [
     ghc
     binutils
     hlint
+    emacs26
     ];
 in
 mkShell rec {
