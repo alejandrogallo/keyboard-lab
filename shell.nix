@@ -12,6 +12,7 @@ let
   nixPackages = [
     ghc
     binutils
+    inkscape
     hlint
     emacs26
     ];

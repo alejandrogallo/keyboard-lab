@@ -8,13 +8,20 @@ SIDES = left right
 KBS = $(foreach side,$(SIDES),\
          $(foreach switch,$(SWITCHES),\
             $(foreach kb,$(KEYBOARDS),\
-               $(BUILD_DIR)$(kb)-$(switch)-$(side).svg)))
+              $(foreach base,-without-base -with-base,\
+                 $(BUILD_DIR)$(kb)-$(switch)-$(side)$(base).svg))))
+
+EPS = $(patsubst %.svg,%.eps,$(KBS))
 
 
 define kb-rule
-$(BUILD_DIR)$(1)-$(2)-$(3).svg: Main
+$(BUILD_DIR)$(1)-$(2)-$(3)-without-base.svg: Main
 	$$(info [35m⇒[0m [36m$$@[0m)
 	./$$< --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
+
+$(BUILD_DIR)$(1)-$(2)-$(3)-with-base.svg: Main
+	$$(info [35m⇒[0m [36m$$@[0m)
+	./$$< --$(3) --keyswitch $(2) --keyboard $(1) --with-base -o $$@
 endef
 
 $(foreach side,$(SIDES),\
@@ -32,6 +39,11 @@ readme.org: $(KBS)
 	done
 
 svg: $(KBS)
+eps: $(EPS)
+
+%.eps: %.svg
+	$(info [35m⇒[0m [36m$@[0m)
+	inkscape --without-gui --export-eps=$@ $<
 
 include deps.mk
 
@@ -44,7 +56,7 @@ Main: $(wildcard *.hs)
 	ghc $<
 
 clean:
-	rm *.svg *.o *.hi Main deps.mk build/*
+	rm -v *.svg *.o *.hi Main deps.mk build/*
 
 nix:
 	nix-shell --run make
@@ -76,7 +88,7 @@ tags TAGS: .deps/diagrams-lib/src \
 	ctags $?
 	ctags -e $?
 
-.PHONY: nix clean all dep svg lint verbose
+.PHONY: nix clean all dep svg lint verbose eps
 
 verbose: VERBOSE=5
 ifndef VERBOSE

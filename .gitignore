@@ -1,4 +1,6 @@
 *.hi
+*.svg
+*.eps
 tags
 TAGS
 .deps/

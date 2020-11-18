@@ -25,8 +25,11 @@ jobs:
     - name: Install Nix
       uses: cachix/install-nix-action@v10
 
-    - name: Build figures
-      run: nix-shell --run make
+    - name: Build svg
+      run: nix-shell --run 'make -j svg'
+
+    - name: Build eps
+      run: nix-shell --run 'make -j eps'
 
     - name: Linting
       run: nix-shell --run 'hlint *.hs'

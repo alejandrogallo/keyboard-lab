@@ -20,15 +20,27 @@ I have and keyboards I'm building with them:
 | MX mount   | [[https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf][sparkfun]] | [[https://deskthority.net/wiki/Cherry_MX][deskthority]] |                           |
 
 * Examples
-** Nammu Tec left
-[[file:build/Nammu-Tec-left.svg]]
-** Utu Tec left
-[[file:build/Utu-Tec-left.svg]]
-** Nammu Alps left
-[[file:build/Nammu-Alps-left.svg]]
-** Utu Alps left
-[[file:build/Utu-Alps-left.svg]]
-** Nammu Mx left
-[[file:build/Nammu-Mx-left.svg]]
-** Utu Mx left
-[[file:build/Utu-Mx-left.svg]]
+** Nammu Tec left without base
+[[file:build/Nammu-Tec-left-without-base.svg]]
+** Nammu Tec left with base
+[[file:build/Nammu-Tec-left-with-base.svg]]
+** Utu Tec left without base
+[[file:build/Utu-Tec-left-without-base.svg]]
+** Utu Tec left with base
+[[file:build/Utu-Tec-left-with-base.svg]]
+** Nammu Alps left without base
+[[file:build/Nammu-Alps-left-without-base.svg]]
+** Nammu Alps left with base
+[[file:build/Nammu-Alps-left-with-base.svg]]
+** Utu Alps left without base
+[[file:build/Utu-Alps-left-without-base.svg]]
+** Utu Alps left with base
+[[file:build/Utu-Alps-left-with-base.svg]]
+** Nammu Mx left without base
+[[file:build/Nammu-Mx-left-without-base.svg]]
+** Nammu Mx left with base
+[[file:build/Nammu-Mx-left-with-base.svg]]
+** Utu Mx left without base
+[[file:build/Utu-Mx-left-without-base.svg]]
+** Utu Mx left with base
+[[file:build/Utu-Mx-left-with-base.svg]]
