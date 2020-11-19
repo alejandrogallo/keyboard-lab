@@ -17,11 +17,11 @@ PDF = $(patsubst %.svg,%.pdf,$(KBS))
 
 define kb-rule
 $(BUILD_DIR)$(1)-$(2)-$(3)-without-base.svg: Main
-	$$(info [35m⇒[0m [36m$$@[0m)
+	$$(info [[32mHSλ] [35m⇒[0m [36m$$@[0m)
 	./$$< --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
 
 $(BUILD_DIR)$(1)-$(2)-$(3)-with-base.svg: Main
-	$$(info [35m⇒[0m [36m$$@[0m)
+	$$(info [[32mHSλ] [35m⇒[0m [36m$$@[0m)
 	./$$< --$(3) --keyswitch $(2) --keyboard $(1) --with-base -o $$@
 endef
 
@@ -44,11 +44,11 @@ eps: $(EPS)
 pdf: $(PDF)
 
 %.eps: %.svg
-	$(info [35m⇒[0m [36m$@[0m)
+	$(info [33m[ink] [35m⇒[0m [36m$@[0m)
 	inkscape --without-gui --export-eps=$@ $<
 
 %.pdf: %.svg
-	$(info [35m⇒[0m [36m$@[0m)
+	$(info [ink] [35m⇒[0m [36m$@[0m)
 	inkscape --without-gui --export-pdf=$@ $<
 
 include deps.mk
