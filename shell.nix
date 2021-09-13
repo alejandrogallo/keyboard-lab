@@ -3,18 +3,18 @@ with import <nixpkgs> {};
 let
   haskellDeps = ps: [
     ps.diagrams
-    ps.diagrams-pgf
+    #ps.diagrams-pgf
     ps.implicit
     ps.haskell-language-server
     ps.cabal-install
   ];
-  ghc = unstable.haskellPackages.ghcWithPackages haskellDeps;
+  myghc = haskellPackages.ghcWithPackages haskellDeps;
   nixPackages = [
-    ghc
+    myghc
     binutils
     inkscape
     hlint
-    emacs26
+    emacs
     ];
 in
 mkShell rec {

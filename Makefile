@@ -13,6 +13,7 @@ KBS = $(foreach side,$(SIDES),\
 
 EPS = $(patsubst %.svg,%.eps,$(KBS))
 PDF = $(patsubst %.svg,%.pdf,$(KBS))
+PNG = $(patsubst %.svg,%.png,$(KBS))
 
 
 define kb-rule
@@ -42,6 +43,8 @@ readme.org: $(KBS)
 svg: $(KBS)
 eps: $(EPS)
 pdf: $(PDF)
+png: $(PNG)
+.PHONY: svg eps pdf png
 
 %.eps: %.svg
 	$(info [33m[ink] [35m⇒[0m [36m$@[0m)
@@ -50,6 +53,10 @@ pdf: $(PDF)
 %.pdf: %.svg
 	$(info [ink] [35m⇒[0m [36m$@[0m)
 	inkscape --without-gui --export-pdf=$@ $<
+
+%.png: %.svg
+	$(info [ink] [35m⇒[0m [36m$@[0m)
+	inkscape --without-gui --export-png=$@ $<
 
 include deps.mk
 
