@@ -20,15 +20,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
 
     - name: Install Nix
-      uses: cachix/install-nix-action@v10
+      uses: cachix/install-nix-action@v13
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Build svg
       run: nix-shell --run 'make -j svg'
 
     - name: Build eps
+      run: nix-shell --run 'make -j eps'
+
+    - name: Build png
       run: nix-shell --run 'make -j eps'
 
     - name: Linting

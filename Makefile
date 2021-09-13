@@ -1,7 +1,7 @@
 all: svg readme.org
 
 BUILD_DIR = build/
-KEYBOARDS = Nammu Utu
+KEYBOARDS = Nammu Utu Buzurg
 SWITCHES = Tec Alps Mx
 SIDES = left right
 

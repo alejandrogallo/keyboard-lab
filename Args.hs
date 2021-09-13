@@ -8,7 +8,7 @@ import           Diagrams.Backend.CmdLine       ( Parseable
 data KeyswitchName = Tec | Alps | Mx
   deriving Read
 
-data KeyboardName = Nammu | Utu
+data KeyboardName = Nammu | Utu | Buzurg
   deriving Read
 
 data Options = Options

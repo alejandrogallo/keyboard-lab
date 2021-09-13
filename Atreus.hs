@@ -1,10 +1,11 @@
 module Atreus where
 
-import           Diagrams.Prelude
-import           Diagrams.Backend.SVG.CmdLine
+import Diagrams.Prelude
+    ( place, fromOffsets, Diagram, Coordinates((^&)) )
+import Diagrams.Backend.SVG.CmdLine ( B )
 
-import           Keyboard
-import           Screws
+import Keyboard ( Key(Key), Keyboard )
+import Screws ( m3 )
 
 
 squaredCase :: Diagram B

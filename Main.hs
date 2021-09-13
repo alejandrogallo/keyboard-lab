@@ -7,6 +7,7 @@ import           Alps                           ( alpsFootprint
                                                 )
 import           Mx                             ( mxFootprint )
 import qualified Atreus
+import qualified Buzurg
 import qualified Cutting                       as C
 import           Keyboard
 import           Promicro
@@ -20,8 +21,9 @@ switchFootprint a = case a of
   A.Mx   -> mxFootprint
 
 keyboardFromName :: A.KeyboardName -> (Keyboard, Footprint)
-keyboardFromName A.Nammu = (Atreus.atreus, Atreus.squaredCase)
-keyboardFromName A.Utu   = (Atreus.orthoAtreus, Atreus.squaredCase)
+keyboardFromName A.Nammu  = (Atreus.atreus, Atreus.squaredCase)
+keyboardFromName A.Utu    = (Atreus.orthoAtreus, Atreus.squaredCase)
+keyboardFromName A.Buzurg = (Buzurg.keyboard, Atreus.squaredCase)
 
 drawProject :: A.Options -> Diagram B
 drawProject o = d # scale cmToPx # op
