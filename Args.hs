@@ -1,6 +1,7 @@
 module Args where
 
-import           Options.Applicative
+import Options.Applicative
+    ( Parser, auto, help, long, option, switch )
 import           Diagrams.Backend.CmdLine       ( Parseable
                                                 , parser
                                                 )
@@ -17,6 +18,8 @@ data Options = Options
   , left      :: Bool
   , right     :: Bool
   , withBase  :: Bool
+  , noPromicro  :: Bool
+  , noTrrs  :: Bool
   }
 
 _keyboard :: Parser KeyboardName
@@ -35,6 +38,14 @@ options =
     <*> switch
           (  long "with-base"
           <> help "Wether or not to export the base for lasercut services"
+          )
+    <*> switch
+          (  long "without-promicro"
+          <> help "Export the promicro"
+          )
+    <*> switch
+          (  long "without-trrs"
+          <> help "Do not export the trrs connector"
           )
 
 instance Parseable Options where

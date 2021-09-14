@@ -15,15 +15,22 @@ EPS = $(patsubst %.svg,%.eps,$(KBS))
 PDF = $(patsubst %.svg,%.pdf,$(KBS))
 PNG = $(patsubst %.svg,%.png,$(KBS))
 
+MAINFLAGS =
+ifdef NOPROMICRO
+MAINFLAGS += --without-promicro
+endif
+ifdef NOTRRS
+MAINFLAGS += --without-trrs
+endif
 
 define kb-rule
 $(BUILD_DIR)$(1)-$(2)-$(3)-without-base.svg: Main
 	$$(info [[32mHSλ] [35m⇒[0m [36m$$@[0m)
-	./$$< --$(3) --keyswitch $(2) --keyboard $(1) -o $$@
+	./$$< --$(3) --keyswitch $(2) --keyboard $(1) ${MAINFLAGS} -o $$@
 
 $(BUILD_DIR)$(1)-$(2)-$(3)-with-base.svg: Main
 	$$(info [[32mHSλ] [35m⇒[0m [36m$$@[0m)
-	./$$< --$(3) --keyswitch $(2) --keyboard $(1) --with-base -o $$@
+	./$$< --$(3) --keyswitch $(2) --keyboard $(1) --with-base ${MAINFLAGS} -o $$@
 endef
 
 $(foreach side,$(SIDES),\
@@ -48,15 +55,15 @@ png: $(PNG)
 
 %.eps: %.svg
 	$(info [33m[ink] [35m⇒[0m [36m$@[0m)
-	inkscape --without-gui --export-eps=$@ $<
+	inkscape --export-type=eps $<
 
 %.pdf: %.svg
 	$(info [ink] [35m⇒[0m [36m$@[0m)
-	inkscape --without-gui --export-pdf=$@ $<
+	inkscape --export-type=pdf $<
 
 %.png: %.svg
 	$(info [ink] [35m⇒[0m [36m$@[0m)
-	inkscape --without-gui --export-png=$@ $<
+	inkscape --export-type=png $<
 
 include deps.mk
 

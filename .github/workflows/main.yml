@@ -34,7 +34,19 @@ jobs:
       run: nix-shell --run 'make -j eps'
 
     - name: Build png
-      run: nix-shell --run 'make -j eps'
+      run: nix-shell --run 'make -j png'
 
     - name: Linting
       run: nix-shell --run 'hlint *.hs'
+
+    - name: Build documentation
+      run: |
+        mkdir doc
+        cp build/*.png doc/
+        echo hello world > doc/index.html
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.0
+      with:
+         branch: gh-pages
+         folder: ./doc

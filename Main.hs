@@ -31,7 +31,9 @@ drawProject o = d # scale cmToPx # op
   (keyboard, plate) = keyboardFromName . A.name $ o
   switch = switchFootprint . A.keyswitch $ o
   kbD = drawKeyboard switch keyboard
-  thirdParty = vsep 0.0 [promicro, trrs]
+  thirdParty = vsep 0.0 [ if A.noPromicro o then mempty else promicro
+                        , if A.noTrrs o then mempty else trrs
+                        ]
   electronics = kbD # center <> thirdParty # center # translate (5.0 ^& 2.5)
   d = hsep 0.5 [electronics <> plate # lc C.cutting # center, base]
   base = if not $ A.withBase o then mempty else plate # lc C.cutting # center
