@@ -5,6 +5,7 @@ let
     ps.diagrams
     #ps.diagrams-pgf
     ps.implicit
+    ps.dhall
     ps.haskell-language-server
     ps.cabal-install
   ];
