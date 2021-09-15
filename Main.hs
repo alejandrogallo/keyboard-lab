@@ -24,6 +24,12 @@ switchFootprint a = case a of
   A.Alps -> alpsFootprint
   A.Mx   -> mxFootprint
 
+switchBoardFootprint :: BO.Switch -> KB.Footprint
+switchBoardFootprint a = case a of
+  BO.Tec  -> tecFootprint
+  BO.Alps -> alpsFootprint
+  BO.Mx   -> mxFootprint
+
 keyboardFromName :: A.KeyboardName -> (KB.Keyboard, KB.Footprint)
 keyboardFromName A.Nammu  = (Atreus.atreus, Atreus.squaredCase)
 keyboardFromName A.Utu    = (Atreus.orthoAtreus, Atreus.squaredCase)
@@ -48,7 +54,8 @@ drawProject o = d # scale cmToPx # op
 drawBoard :: BO.Board -> A.Options -> Diagram B
 drawBoard board os = kbD # scale cmToPx
   where
-    kbD = KB.drawKeyboard tecFootprint keyboard
+    kbD = KB.drawKeyboard _switchFootprint keyboard
+    _switchFootprint = switchBoardFootprint $ BO.switch board
     keyboard = BO.keyboard board
     switch = A.Mx
 

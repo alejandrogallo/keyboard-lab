@@ -28,7 +28,7 @@ _keyswitch :: Parser KeyswitchName
 _keyswitch = option auto (long "keyswitch" <> help "Name of the keyswitch")
 
 _dhallFile :: Parser String
-_dhallFile = option str (long "dhall" <> help "Dhall file PATH" <> metavar "dhall_file")
+_dhallFile = option str (long "in" <> help "Dhall file PATH" <> metavar "dhall_file")
 
 options :: Parser Options
 options =
