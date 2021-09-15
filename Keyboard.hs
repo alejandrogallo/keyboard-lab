@@ -1,7 +1,11 @@
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE TypeSynonymInstances #-}
+{-# LANGUAGE OverloadedStrings #-}
 module Keyboard where
 
 import           Diagrams.Prelude
 import           Diagrams.Backend.SVG.CmdLine
+import GHC.Generics ( Generic, Rep )
 
 type Footprint = Diagram B
 type Keyboard = [Key]
@@ -11,7 +15,7 @@ data Key = Key
   , keyY     :: Double
   , keyAngle :: Double
   , keyLabel :: String
-  }
+  } deriving (Generic, Show)
 
 drawKeyboard :: Footprint -> Keyboard -> Diagram B
 drawKeyboard f kb = mconcat $ drawKey <$> kb
