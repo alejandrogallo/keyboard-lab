@@ -27,14 +27,15 @@ jobs:
       with:
         nix_path: nixpkgs=channel:nixos-unstable
 
-    - name: Build svg
-      run: nix-shell --run 'make -j svg'
+    # - name: Build svg
+    #   run: nix-shell --run 'make -j svg'
+    # - name: Build eps
+    #   run: nix-shell --run 'make -j eps'
+    # - name: Build png
+    #   run: nix-shell --run 'make -j png'
 
-    - name: Build eps
-      run: nix-shell --run 'make -j eps'
-
-    - name: Build png
-      run: nix-shell --run 'make -j png'
+    - name: make Main
+      run: nix-shell --run 'make Main'
 
     - name: Linting
       run: nix-shell --run 'hlint *.hs'
@@ -42,8 +43,11 @@ jobs:
     - name: Build documentation
       run: |
         mkdir doc
-        cp build/*.png doc/
-        echo hello world > doc/index.html
+        cd doc
+        for kbd in ../keyboards/*.dhall; do
+          ./Main --in ./$kbd --out `basename $kbd .dhall`.svg
+        done
+        echo hello world > index.html
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0

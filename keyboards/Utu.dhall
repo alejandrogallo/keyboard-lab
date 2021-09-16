@@ -1,9 +1,12 @@
+let Types = ../Types.dhall
+
 let k =
       \(x : Double) ->
       \(y : Double) ->
         { keyX = x, keyY = y, keyAngle = 0.0, keyLabel = "" }
 
 in  { name = "Utu"
+    , switch = Types.Switch.Mx
     , keyboard =
       [ k 0.0 0.0
       , k 0.0 1.95
