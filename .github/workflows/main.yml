@@ -45,7 +45,7 @@ jobs:
         mkdir doc
         cd doc
         for kbd in ../keyboards/*.dhall; do
-          ./Main --in ./$kbd --out `basename $kbd .dhall`.svg
+          ../Main --in ./$kbd --out `basename $kbd .dhall`.svg
         done
         echo hello world > index.html
 
